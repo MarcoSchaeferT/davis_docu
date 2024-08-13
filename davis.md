@@ -11,4 +11,4 @@ Example
 * test
 * doc 2
 
-[test](/davis/about)
+[test](/davisDocu/about)

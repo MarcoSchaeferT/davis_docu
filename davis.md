@@ -1,6 +1,8 @@
 ---
 layout: page
 title: davis
+nav_order: 3
+has_children: true
 permalink: /davis/
 ---
 
@@ -12,3 +14,4 @@ Example
 * doc 2
 
 [test](/davisDocu/about)
+* [davisChild](/davisDocu/davisParent/davisChild)

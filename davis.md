@@ -11,4 +11,4 @@ Example
 * test
 * doc 2
 
-[test](./about.markdown)
+[test](/davis_docu/about.markdown)

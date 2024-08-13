@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: davis
 permalink: /davis/
 ---
 
@@ -11,4 +11,4 @@ Example
 * test
 * doc 2
 
-[test](/about/)
+[test](./about.markdown)

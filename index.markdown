@@ -1,6 +1,8 @@
 ---
 title: Home
 layout: home
+nav_order: 1
+has_children: true
 ---
 
 #  [How to use just-the-docs?](https://just-the-docs.com/)

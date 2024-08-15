@@ -8,7 +8,6 @@ permalink: /markdownExample/
 
 copied markdown example from: [https://markdown-it.github.io/](https://markdown-it.github.io/)
 
-
 __Advertisement :)__
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
@@ -21,12 +20,16 @@ You will like those projects!
 ---
 
 # h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
 
+## h2 Heading
+
+### h3 Heading
+
+#### h4 Heading
+
+##### h5 Heading
+
+###### h6 Heading
 
 ## Horizontal Rules
 
@@ -35,7 +38,6 @@ ___
 ---
 
 ***
-
 
 ## Typographic replacements
 
@@ -49,46 +51,41 @@ test.. test... test..... test?..... test!....
 
 "Smartypants, double quotes" and 'single quotes'
 
-
 ## Emphasis
 
-**This is bold text**
+__This is bold text__
 
 __This is bold text__
 
 *This is italic text*
 
-_This is italic text_
+*This is italic text*
 
 ~~Strikethrough~~
 
-
 ## Blockquotes
-
 
 > Blockquotes can also be nested...
 >> ...by using additional greater-than signs right next to each other...
 > > > ...or with spaces between arrows.
 
-
 ## Lists
 
 Unordered
 
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
+- Create a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
   - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
+    - Ac tristique libero volutpat at
+    - Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit
-+ Very easy!
+- Very easy!
 
 Ordered
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
-
 
 1. You can use sequential numbers...
 1. ...or keep all the numbers as `1.`
@@ -97,7 +94,6 @@ Start numbering with offset:
 
 57. foo
 1. bar
-
 
 ## Code
 
@@ -109,7 +105,6 @@ Indented code
     line 1 of code
     line 2 of code
     line 3 of code
-
 
 Block code "fences"
 
@@ -143,15 +138,13 @@ Right aligned columns
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 
-
 ## Links
 
 [link text](http://dev.nodeca.com)
 
 [link with title](http://nodeca.github.io/pica/demo/ "title text!")
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
+Autoconverted link <https://github.com/nodeca/pica> (enable linkify to see)
 
 ## Images
 
@@ -166,12 +159,10 @@ With a reference later in the document defining the URL location:
 
 [id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 
-
 ## Plugins
 
 The killer feature of `markdown-it` is very effective support of
 [syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
 
 ### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
 
@@ -181,22 +172,18 @@ The killer feature of `markdown-it` is very effective support of
 
 see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
 
-
 ### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
 - 19^th^
 - H~2~O
 
-
 ### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
 
 ++Inserted text++
 
-
 ### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
 
 ==Marked text==
-
 
 ### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
 
@@ -208,12 +195,11 @@ Inline footnote^[Text of inline footnote] definition.
 
 Duplicated footnote reference[^second].
 
-[^first]: Footnote **can have markup**
+[^first]: Footnote __can have markup__
 
     and multiple paragraphs.
 
 [^second]: Footnote text.
-
 
 ### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
 
@@ -230,7 +216,7 @@ Term 2 with *inline markup*
 
     Third paragraph of definition 2.
 
-_Compact style:_
+*Compact style:*
 
 Term 1
   ~ Definition 1
@@ -238,7 +224,6 @@ Term 1
 Term 2
   ~ Definition 2a
   ~ Definition 2b
-
 
 ### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
 

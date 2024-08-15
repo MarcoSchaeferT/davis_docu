@@ -38,3 +38,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 #marco added
 gem "jekyll-default-layout"
+gem "kramdown-syntax-coderay", "~> 1.0"
+gem "jemoji", "~> 0.13.0"

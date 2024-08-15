@@ -36,6 +36,7 @@ theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-default-layout
+  - jemoji
  # - jekyll-remote-theme
 
 # Exclude from processing.
@@ -58,3 +59,9 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+
+kramdown:
+  #syntax_highlighter: coderay
+  #syntax_highlighter_opts:
+   # line_numbers: table
+   # bold_every: 5

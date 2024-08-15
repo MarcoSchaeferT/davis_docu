@@ -1,13 +1,4 @@
----
-layout: page
-title: davis
-nav_order: 3
-has_children: true
-permalink: /davis/
----
-
-# DAVis Documentation
-
+## **Dash Product Documentation**
 
 ### **Table of Contents** 
 
@@ -237,12 +228,3 @@ AI Davies caters to data analysts, researchers, and administrators who require r
 * Monitoring tools and practices to ensure application performance and uptime.  
 * Troubleshooting guide for common issues and resolutions.
 
-
-
-
-Example 
-* test
-* doc 2
-
-[test](/davisDocu/about)
-* [davisChild](/davisDocu/davisParent/davisChild)

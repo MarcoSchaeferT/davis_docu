@@ -1,9 +1,11 @@
 ---
-layout: default
-title: Callouts
-parent: davis
-nav_order: 7
+layout: page
+title: "Template: Just the Docs"
+nav_order: 2
+parent: How to use?
+permalink: /Just_the_Docs/
 ---
+
 
 # Callouts
 {: .d-inline-block }

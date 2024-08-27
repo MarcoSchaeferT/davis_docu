@@ -11,9 +11,6 @@ has_children: true
 
  [tech-stack]: assets/technologyStack.png
 
-Example 
-* test
-* doc 2
 
-[test](/davisDocu/about)
-* [davisChild](/davisDocu/davisParent/davisChild)
+
+[about](/davisDocu/about)

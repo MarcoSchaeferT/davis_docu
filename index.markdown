@@ -9,7 +9,7 @@ has_children: true
 
 | ![Technology Stack][tech-stack] |
 
- [tech-stack]: assets/technologyStack.png
+ [tech-stack]: assets/DAVisTechnologyStack.svg
 
 
 

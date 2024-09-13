@@ -1,11 +1,20 @@
 ---
-layout: page
 title: "Template: Just the Docs"
+parent: DocuDev - How to use?
+layout: page
 nav_order: 2
-parent: How to use?
 permalink: /Just_the_Docs/
 ---
-
+[https://mermaid.js.org/intro/](https://mermaid.js.org/intro/)
+```mermaid
+graph TD;
+    accTitle: the diamond pattern
+    accDescr: a graph with four nodes: A points to B and C, while B and C both point to D
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 # Callouts
 {: .d-inline-block }
@@ -17,7 +26,7 @@ Markdown does not include support for callouts. However, you can style text as a
 
 Common kinds of callouts include `highlight`, `important`, `new`, `note`, and `warning`.
 
-{: .warning }
+{:.warning}
 These callout names are *not* pre-defined by the theme: you need to define your own names.
 
 When you have [configured](/davisDocu/davis.md#callouts) the  `color` and (optional) `title` for a callout, you can apply it to a paragraph, or to a block quote with several paragraphs, as illustrated below.[^postfix]

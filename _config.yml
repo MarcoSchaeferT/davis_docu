@@ -59,7 +59,29 @@ plugins:
 
 
 kramdown:
-  #syntax_highlighter: coderay
-  #syntax_highlighter_opts:
-   # line_numbers: table
-   # bold_every: 5
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+
+mermaid:
+  version: "11.2.0"
+  # for (v10+)
+  
+

@@ -5,10 +5,16 @@ nav_order: 1
 has_children: true
 ---
 
-# DAVis Technology Stack
+# DAVis Dev Documentation
 
-| ![Technology Stack][tech-stack] |
+{:.new}
+This site contains the development related documentation of the DAVis project.
 
- [tech-stack]: assets/DAVisTechnologyStack.svg
+{:.note}
+Link: [How to use/add things to the documentaion page?](how_to_use)
 
-[about](/davisDocu/about)
+<!--[tech-stack]: assets/DAVisTechnologyStack.svg
+![Technology Stack][tech-stack]-->
+
+[<img src= "assets/DAVisTechnologyStack.svg" alt="echnology stack of the DAVis-Dashboard" style=" padding: 10px; border: 2px solid grey;">](assets/DAVisTechnologyStack.svg){:.border}
+*technology stack of the DAVis-Dashboard*

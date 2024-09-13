@@ -1,8 +1,8 @@
 ---
-layout: page
 title: Markdown Example
+parent: DocuDev - How to use?
 nav_order: 1
-parent: How to use?
+layout: page
 permalink: /markdownExample/
 ---
 

@@ -1,8 +1,7 @@
 ---
-title: How to use?
+title: DocuDev - How to use?
+nav_order: 6
 layout: page
-nav_order: 2
-has_children: true
 permalink: /how_to_use
 ---
 
@@ -10,6 +9,7 @@ permalink: /how_to_use
 
 #  [How to use template: just-the-docs?](https://just-the-docs.com/)
 click [link](https://just-the-docs.com/)
+[Link button](https://just-the-docs.com){: .btn }
 
 ## run local instance:
 <div class="code-example" markdown="1">
@@ -19,6 +19,11 @@ bundle exec jekyll serve --livereload
 ```
 </div>
 --------
+
+## install missing gems
+```bash
+bundle install
+```
 
 ## add new gems/packages:
 <div class="code-example" markdown="1">

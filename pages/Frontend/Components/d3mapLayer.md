@@ -1,9 +1,9 @@
 ---
-title: DataTable
+title: d3mapLayer
 parent: Components
-nav_order: 4
+nav_order: 1
 layout: page
 ---
 
-# DataTable
+# d3mapLayer
 Test ...

@@ -2,6 +2,7 @@
 title: Plots
 parent: DocuDev - How to use?
 layout: page
+permalink: /plots/
 nav_order: 3
 ---
 

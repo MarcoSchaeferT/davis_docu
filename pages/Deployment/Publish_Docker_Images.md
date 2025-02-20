@@ -2,6 +2,7 @@
 title: Publish Docker Images
 parent: Deployment
 layout: page
+permalink: /Publish_Docker_Images/
 nav_order: 4
 ---
 

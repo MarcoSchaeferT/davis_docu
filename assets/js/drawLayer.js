@@ -47,6 +47,13 @@ function drawLayer(geoJSON_URL, countryData, mapObj) {
             const countryName = feature.properties.name;
             const count = countryLookup[countryName] || 0;
             const center = layer.getBounds().getCenter();
+            // Adjust center for some countries (e.g., Russia)
+            if (countryName == "Russia") {
+              console.log("Russia center", center);
+              center.lng = 105.3188;
+              center.lat = 61.5240;
+            }
+
             const fontSize = 12; // Adjust font size based on zoom level
 
             L.marker(center, {

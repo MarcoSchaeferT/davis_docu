@@ -41,6 +41,8 @@
   <script>
     const zoomStep = 0.1;
     let mapSettings = {
+      coords: [20, 6],
+      zoomLevel: 1.85,
       isDraging: false,
       isZooming: false,
       isOpenStreetMap: false
@@ -57,7 +59,6 @@
     mapObj.options.zoomSnap = zoomStep * 0.01;
     mapObj.options.inertia = true;
     mapObj.options.zoomAnimation = false;
-    mapObj.setView([20, 6], 1.85);
 
     mapObj.removeControl(mapObj.zoomControl);
     mapObj.dragging.disable();

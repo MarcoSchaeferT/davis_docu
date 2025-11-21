@@ -3,8 +3,7 @@ function createMap(mapSettings) {
 
   // create map
   let map = L.map('map');
-  map.fitBounds([[-60, -180], [90, 180]]);
-
+  map.setView(mapSettings.coords, mapSettings.zoomLevel);
 
   // disable map zooming and scrolling
   if (!mapSettings.isZooming)

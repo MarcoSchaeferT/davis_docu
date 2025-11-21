@@ -4,19 +4,26 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
 
   // wait for geojson data (country polygons)
   countryContoursData.then((contoursData) => {
-    const catCnt = 6; // number of categories
+    const catCnt = 5; // number of categories
     const opacity = 0.9;
 
     // color scale function
     let colorScale = d3.scaleOrdinal()
       .domain(d3.range(0, catCnt))
-      .range(['#FFFFFF'].concat(d3.schemeOrRd[catCnt - 1]));
+      .range(['#d2d1d1ff', '#a5d5d8', '#73a2c6', '#4771b2', '#00429d']);
     //['#FFFFFF', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C']
 
+
     function getColor(count) {
-      if (count >= catCnt)
-        return colorScale(catCnt - 1);
+      /*
+      if (count <= 0) return colorScale(0);
+      if (count <= 3) return colorScale(1);
+      if (count <= 6) return colorScale(2);
+      if (count <= 9) return colorScale(3);
+      */
+      if (count >= catCnt) return colorScale(catCnt - 1);
       return colorScale(count);
+
     }
 
     // Convert countryData into a lookup dictionary
@@ -32,9 +39,9 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
         const count = countryLookup[countryName] || 0; // Lookup count
         return {
           fillColor: getColor(count),
-          weight: 0.8,
+          weight: 1.8,
           opacity: 0.9,
-          color: '#333',
+          color: '#ffffffff',
           lineJoin: 'round',
           lineCap: 'round',
           fillOpacity: opacity
@@ -58,7 +65,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
           color:#fff;
           text-align:center;">
              <div style="font-weight:600;">${countryName}</div>
-             <div>${count} group member${count <= 1 ? '' : 's'}</div>
+             <div>${count} collaborator${count <= 1 ? '' : 's'}</div>
            </div>`,
           { direction: 'top', sticky: true, offset: [0, -8], opacity: 1 }
         );
@@ -143,7 +150,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
     // add border to map container
     const mapContainer = map.getContainer();
     if (mapContainer) {
-      mapContainer.style.border = '0.5px solid #000000';
+      // mapContainer.style.border = '0.5px solid #000000';
     }
   });
 }

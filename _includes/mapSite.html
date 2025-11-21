@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum - Visualization Group</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.10.0/proj4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
   <style>
     #map {
       height: 432px;
@@ -39,13 +41,14 @@
   <script src="{{ site.baseurl }}/assets/js/createMap.js"></script>
   <script src="{{ site.baseurl }}/assets/js/drawLayer.js"></script>
   <script>
-    const zoomStep = 0.1;
+
     let mapSettings = {
-      coords: [20, 6],
-      zoomLevel: 1.85,
+      coords: [20, 10],
+      zoomLevel: 0.65,
       isDraging: false,
       isZooming: false,
-      isOpenStreetMap: false
+      isOpenStreetMap: false,
+      projection: "mollweide",
     };
     const mapObj = createMap(mapSettings);
 
@@ -55,8 +58,6 @@
     let countryVisData = dataLoaderCSV(dataPath);
     let countryContoursData = dataLoaderGeoJSON(geoJSON_path);
 
-    mapObj.options.zoomDelta = zoomStep;
-    mapObj.options.zoomSnap = zoomStep * 0.01;
     mapObj.options.inertia = true;
     mapObj.options.zoomAnimation = false;
 

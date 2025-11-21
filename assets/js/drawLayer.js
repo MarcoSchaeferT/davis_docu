@@ -40,7 +40,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
         return {
           fillColor: getColor(count),
           weight: 1.8,
-          opacity: 0.9,
+          opacity: opacity,
           color: '#ffffffff',
           lineJoin: 'round',
           lineCap: 'round',

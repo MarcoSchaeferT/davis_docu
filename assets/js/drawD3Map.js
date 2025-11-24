@@ -23,7 +23,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
     .attr('viewBox', `0 0 ${width} ${height}`);
 
   const catCnt = 5; // number of categories
-  const opacity = 0.9;
+  const opacity = 0.99;
 
   // color scale function
   let colorScale = d3.scaleOrdinal()
@@ -92,8 +92,8 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .attr('d', path)
       .attr('fill', 'none')
       .attr('stroke', '#5C5C5C')
-      .attr('stroke-width', 0.4)
-      .attr('stroke-opacity', 0.35)
+      .attr('stroke-width', 0.3)
+      .attr('stroke-opacity', 0.99)
       .attr('pointer-events', 'none');
 
 
@@ -145,8 +145,8 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .datum(outline)
       .attr("d", path)
       .attr("fill", "none")
-      .attr("stroke", "#5C5C5C")  // Light outline
-      .attr("stroke-width", 3.5);
+      .attr("stroke", "#b9c6cfff")  // Light outline "#b9c6cfff"
+      .attr("stroke-width", 3.0);
 
     // create the legend
     const legendData = (

@@ -4,53 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum - Visualization Group</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.10.0/proj4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3-array.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v4.min.js"></script>
+
   <style>
-    #map {
-      height: 432px;
-      width: 768px;
-    }
-
-    .leaflet-container {
-      background: #ff400000;
-    }
-
-    /* Leaflet tooltip styling */
-    .leaflet-tooltip {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      color: black !important;
-    }
-
-    .leaflet-tooltip-top::before {
-      border-top-color: black !important;
+    #mapD3 {
+      height: 504px;
+      width: 896px;
+      background: #ffffff00;
     }
   </style>
 </head>
 
 <body>
   <h1>Impressum</h1>
-  <div id="map"></div>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <div id="mapD3"></div>
+
+
   <script src="{{ site.baseurl }}/assets/js/dataLoaderCSV.js"></script>
   <script src="{{ site.baseurl }}/assets/js/dataLoaderJSON.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/createMap.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/drawLayer.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/drawD3Map.js"></script>
   <script>
-
-    let mapSettings = {
-      coords: [20, 10],
-      zoomLevel: 0.65,
-      isDraging: false,
-      isZooming: false,
-      isOpenStreetMap: false,
-      projection: "mollweide",
-    };
-    const mapObj = createMap(mapSettings);
 
     const dataPath = "{{ site.baseurl }}/assets/data.csv";
     const geoJSON_path = "{{ site.baseurl }}/assets/countryContours.geo.json";
@@ -58,17 +34,7 @@
     let countryVisData = dataLoaderCSV(dataPath);
     let countryContoursData = dataLoaderGeoJSON(geoJSON_path);
 
-    mapObj.options.inertia = true;
-    mapObj.options.zoomAnimation = false;
-
-    mapObj.removeControl(mapObj.zoomControl);
-    mapObj.dragging.disable();
-    mapObj.doubleClickZoom.disable();
-    mapObj.scrollWheelZoom.disable();
-    mapObj.touchZoom.disable();
-    mapObj.boxZoom.disable();
-
-    drawLayer(countryContoursData, countryVisData, mapObj);
+    drawLayer(countryContoursData, countryVisData, document.querySelector('#mapD3'));
 
   </script>
 </body>

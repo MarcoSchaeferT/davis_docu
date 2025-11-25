@@ -24,11 +24,12 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
 
   const catCnt = 5; // number of categories
   const opacity = 0.99;
+  const outlineColor = '#d2d1d1ff';
 
   // color scale function
   let colorScale = d3.scaleOrdinal()
     .domain(d3.range(0, catCnt))
-    .range(['#d2d1d1ff', '#a5d5d8', '#73a2c6', '#4771b2', '#00429d']);
+    .range(['#FFFFFF', '#a5d5d8', '#73a2c6', '#4771b2', '#00429d']);
   //['#FFFFFF', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C']
 
 
@@ -91,7 +92,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .datum(grid())
       .attr('d', path)
       .attr('fill', 'none')
-      .attr('stroke', '#5C5C5C')
+      .attr('stroke', outlineColor)
       .attr('stroke-width', 0.3)
       .attr('stroke-opacity', 0.99)
       .attr('pointer-events', 'none');
@@ -113,7 +114,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
         if (value > 0) console.log(name, value, getColor(value));
         return getColor(Number(value));
       })
-      .attr('stroke', '#ffffff')
+      .attr('stroke', outlineColor)
       .attr('stroke-width', 1.0)
       .attr('stroke-linejoin', 'round')
       .attr('fill-opacity', opacity)
@@ -126,7 +127,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
         const colabs = `collaborator${value === 1 ? '' : 's'}`;
         tooltip
           .style('display', 'block')
-          .html(`<div style="text-align:center;"><div style="font-weight:600;">${name}</div><div>${value == 0 ? 'NA' : (value + ' ' + colabs)}</div></div>`);
+          .html(`<div style="text-align:center;"><div style="font-weight:600;">${name}</div><div>${value == 0 ? ' ' : (value + ' ' + colabs)}</div></div>`);
       })
       .on('mousemove', event => {
         const { left, top } = container.getBoundingClientRect();
@@ -145,7 +146,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .datum(outline)
       .attr("d", path)
       .attr("fill", "none")
-      .attr("stroke", "#b9c6cfff")  // Light outline "#b9c6cfff"
+      .attr("stroke", outlineColor)  // Light outline "#b9c6cfff"
       .attr("stroke-width", 3.0);
 
     // create the legend
@@ -163,7 +164,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .attr('class', 'info legend')
       .style('position', 'absolute')
       .style('bottom', '20px')
-      .style('left', '47%')
+      .style('left', '46%')
       .style('transform', 'translateX(-50%)');
 
     legend
@@ -189,7 +190,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .style('opacity', opacity);
 
     items.append('span')
-      .text(d => (d.label === "0" ? 'NA' : d.label))
+      .text(d => (d.label === "0" ? '' : d.label))
       .style('font-size', '13px');
 
     return legend;

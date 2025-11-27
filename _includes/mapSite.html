@@ -22,7 +22,8 @@
   <h1>Impressum</h1>
   <div id="mapD3"></div>
 
-
+  <script src="{{ site.baseurl }}/assets/js/dataFetcher.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/dataAnalysis.js"></script>
   <script src="{{ site.baseurl }}/assets/js/dataLoaderCSV.js"></script>
   <script src="{{ site.baseurl }}/assets/js/dataLoaderJSON.js"></script>
   <script src="{{ site.baseurl }}/assets/js/drawD3Map.js"></script>
@@ -31,10 +32,14 @@
     const dataPath = "{{ site.baseurl }}/assets/data.csv";
     const geoJSON_path = "{{ site.baseurl }}/assets/countryContours.geo.json";
 
-    let countryVisData = dataLoaderCSV(dataPath);
-    let countryContoursData = dataLoaderGeoJSON(geoJSON_path);
+    let JSONData = fetchGoogleSheet();
+    JSONData.then(data => {
+      let countryVisData = analyzeData(data);
+      let countryContoursData = dataLoaderGeoJSON(geoJSON_path);
 
-    drawLayer(countryContoursData, countryVisData, document.querySelector('#mapD3'));
+      drawLayer(countryContoursData, countryVisData, document.querySelector('#mapD3'));
+    });
+
 
   </script>
 </body>

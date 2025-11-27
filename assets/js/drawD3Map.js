@@ -56,9 +56,17 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
 
     // Convert countryData into a lookup dictionary
     let countryLookup = {};
-    countryVisData.forEach(d => {
-      countryLookup[d.country] = d.count;
-    });
+    if (countryVisData && typeof countryVisData === 'object' && !Array.isArray(countryVisData)) {
+      countryVisData = Object.entries(countryVisData).map(([country, count]) => {
+        const value = Number(count) || 0;
+        countryLookup[country] = value;
+        return { country, count: value };
+      });
+    } else {
+      countryVisData.forEach(d => {
+        countryLookup[d.country] = d.count;
+      });
+    }
 
     // create projection and path
     const projection = d3.geoInterruptedSinusoidal()
@@ -111,7 +119,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .attr('fill', d => {
         const name = d.properties?.name || 'Unknown';
         const value = countryLookup[name] || 0;
-        if (value > 0) console.log(name, value, getColor(value));
+        // if (value > 0) console.log(name, value, getColor(value));
         return getColor(Number(value));
       })
       .attr('stroke', outlineColor)

@@ -29,8 +29,10 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
   // color scale function
   let colorScale = d3.scaleOrdinal()
     .domain(d3.range(0, catCnt))
-    .range(['#FFFFFF', '#a5d5d8', '#73a2c6', '#4771b2', '#00429d']);
+    .range(['#FFFFFF', '#ffffe0', '#a2dddd', '#73b2d1', '#4f86c2']);
   //['#FFFFFF', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C']
+
+  let georgesHiglightCol = '#4F86C2';
 
 
   function getColor(count) {
@@ -194,6 +196,7 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
       .style('width', '12px')
       .style('height', '12px')
       .style('border-radius', '50%')
+      .style('border', d => (d.label === "0" ? '' : '1px solid #ccc'))
       .style('background', d => d.color)
       .style('opacity', opacity);
 

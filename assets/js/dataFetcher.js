@@ -14,9 +14,8 @@ async function fetchGoogleSheet() {
     // Get the response text (the CSV data)
     const csvData = await response.text();
 
-    //console.log("Raw CSV Data:", csvData);
 
-    // Optional: Parse the CSV into an array of objects
+    // Parse the CSV into an array of objects
     const data = d3.csvParse(csvData);
     console.log("Parsed JSON");
 

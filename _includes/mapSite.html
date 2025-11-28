@@ -28,11 +28,12 @@
   <script src="{{ site.baseurl }}/assets/js/dataLoaderJSON.js"></script>
   <script src="{{ site.baseurl }}/assets/js/drawD3Map.js"></script>
   <script>
-
+    const sheetId = '1XHIjktvrn4kAi_tR5Z1GmJs0NqIKu8cDevY0FZU7Yzc';
+    const sheetGid = '2076533993';
     const dataPath = "{{ site.baseurl }}/assets/data.csv";
     const geoJSON_path = "{{ site.baseurl }}/assets/countryContours.geo.json";
 
-    let JSONData = fetchGoogleSheet();
+    let JSONData = fetchGoogleSheet(sheetId, sheetGid);
     JSONData.then(data => {
       let countryVisData = analyzeData(data);
       let countryContoursData = dataLoaderGeoJSON(geoJSON_path);

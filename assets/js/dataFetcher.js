@@ -1,7 +1,6 @@
-const sheetId = '1XHIjktvrn4kAi_tR5Z1GmJs0NqIKu8cDevY0FZU7Yzc';
-const base = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
 
-async function fetchGoogleSheet() {
+async function fetchGoogleSheet(sheetId, sheetGid) {
+  const base = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${sheetGid}`;
   try {
     console.log("Fetching sheet data...");
     const response = await fetch(base);

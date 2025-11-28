@@ -2,17 +2,16 @@
 function dataLoaderCSV(dataPath) {
   // Load CSV file
   console.log("Loading vis. data...");
-  let visData = [];
-  d3.csv(dataPath).then(function (data) {
-    data.forEach(function (d) {
-      visData.push(d);
+  return d3.csv(dataPath)
+    .then(function (data) {
+      const visData = data.map(function (d) {
+        return JSON.parse(JSON.stringify(d));
+      });
+      console.log("Loading vis. data finished");
+      return visData;
+    })
+    .catch((error) => {
+      console.error("Loading vis. data failed", error);
+      throw error;
     });
-  }).catch((error) => {
-    console.error("Loading vis. data failed", error);
-    throw error;
-  });
-
-  console.log("Loading vis. data finished");
-
-  return visData;
 }

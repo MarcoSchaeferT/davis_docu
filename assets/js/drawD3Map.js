@@ -22,15 +22,15 @@ function drawLayer(countryContoursData, countryVisData, mapObj) {
     .style('background', '#ffffff00')
     .attr('viewBox', `0 0 ${width} ${height}`);
 
-  const catCnt = 5; // number of categories
+  const catCnt = 4; // number of categories
   const opacity = 0.99;
   const outlineColor = '#d2d1d1ff';
 
   // color scale function
   let colorScale = d3.scaleOrdinal()
     .domain(d3.range(0, catCnt))
-    .range(['#FFFFFF', '#ffffe0', '#a2dddd', '#73b2d1', '#4f86c2']);
-  //['#FFFFFF', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C']
+    .range(['#FFFFFF', '#e2f4d9', '#61c4e0', '#4f86c2']);
+
 
   let georgesHiglightCol = '#4F86C2';
 

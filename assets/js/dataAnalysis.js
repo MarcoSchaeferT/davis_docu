@@ -4,7 +4,13 @@ function analyzeData(data) {
   let countryData = {};
 
   function iterateJson(input, visitor) {
-    if (!input || typeof input !== 'object') return;
+    console.log("Analyzing data...", input);
+    if (typeof input !== 'object') {
+      if (Array.isArray(input)) {
+        input.forEach(item => iterateJson(item, visitor));
+      }
+      return;
+    }
     Object.values(input).forEach(value => {
       number = value.Type ? Number(value.Type) : value.Count ? Number(value.Count) : 0;
       if (value && typeof value === 'object')

@@ -83,5 +83,7 @@ callouts:
 mermaid:
   version: "11.2.0"
   # for (v10+)
-  
 
+sass:
+  quiet_deps: true
+  silence_deprecations: [import, global-builtin, color-functions, mixed-decls]
